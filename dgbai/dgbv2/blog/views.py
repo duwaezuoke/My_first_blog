@@ -47,10 +47,10 @@ def post_list(request):
         tone = tone_analyzer.tone(tone_input=tone_input, content_type="application/json")
         tone2 = str(tone)
         json_data = json.loads(tone2)
-        post.json_score1 = json_data['result']['document_tone'][0]['tones'][0]['score']
-        post.json_score2 = json_data['result']['document_tone'][0]['tones'][1]['score']
-        post.json_name1 = json_data['result']['document_tone'][0]['tones'][0]['tone_name']
-        post.json_name2 = json_data['result']['document_tone'][0]['tones'][1]['tone_name']
+        post.json_score1 = json_data['result']['document_tone']['tones'][0]['score']
+        post.json_score2 = json_data['result']['document_tone']['tones'][1]['score']
+        post.json_name1 = json_data['result']['document_tone']['tones'][0]['tone_name']
+        post.json_name2 = json_data['result']['document_tone']['tones'][1]['tone_name']
 
         post.tone3 = (tone2[1:500])
 
